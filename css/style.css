@@ -1,0 +1,80 @@
+/* Put your CSS here */
+.ember-application {
+    margin: 20px;
+}
+
+.box {
+  border: 2px solid gray;
+  background: #eee;
+  padding: 1em;
+  border-radius: 6px;
+  margin: 10px 0;
+  text-align:center;
+}
+
+.main-image.box img {
+  max-width: 80%;
+}
+
+.link.box{
+  width: auto;
+}
+
+.link.box.previous{
+  float:left;
+}
+.link.box.next{
+  float:right;
+}
+
+.main-image.box{
+  width: auto;
+}
+
+img{
+  max-width: 100%;
+}
+
+.link.box * {
+  float:center;
+  clear:both;
+  margin:auto;
+  text-align:center;
+}
+
+a,
+a.visited {
+  text-decoration: none;
+  font-color: #f00;
+}
+
+#drop {
+  background: #eee;
+  border: 10px solid gray;
+  border-radius: 10px;
+  padding: 3em;
+  text-align:center;
+  font-size: 3em;
+  color: #888;
+}
+
+#status {
+  background: #fee;
+  border: 10px solid pink;
+  border-radius: 10px;
+  padding: 1em;
+  max-width: 20%;
+  text-align:center;
+  font-size: 3em;
+  color: pink;
+}
+#drop.enter {
+  box-shadow: 0px 2px 4pt 4pt lightskyblue;
+}
+#drop.dropped {
+  box-shadow: 0px 0px 3pt 2pt pink;
+}
+.middle {
+  max-width: 50%;
+  margin:auto;
+}
