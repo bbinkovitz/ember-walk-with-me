@@ -56,6 +56,8 @@ a.visited {
   text-align:center;
   font-size: 3em;
   color: #888;
+  max-width: 50%;
+  margin:auto;
 }
 
 #status {
@@ -72,9 +74,6 @@ a.visited {
   box-shadow: 0px 2px 4pt 4pt lightskyblue;
 }
 #drop.dropped {
-  box-shadow: 0px 0px 3pt 2pt pink;
-}
-.middle {
-  max-width: 50%;
-  margin:auto;
+  box-shadow: 0px 2px 4pt 4pt pink;
+  transition: box-shadow 3x;
 }

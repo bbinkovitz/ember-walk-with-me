@@ -48,32 +48,35 @@ App.DrawingsRoute = Ember.Route.extend({
 });
 
 /**
- * Things in the viewTemplate area
- **/
-App.SomeView = Ember.View.extend({
-  templateName: 'viewTemplate'
-});
-
-/**
  * Things in the drop box area.
  **/
 App.AddView = Ember.View.extend({
+  classNameBindings: ['enter:enter:leave', 'dropped:dropped:leave'],
+  enter: false,
+  dropped: false,
+  text: 'Drag image files here.',
   drop: function(event) {
-    event.preventDefault;
-    return false;
-
+    this.set('text', 'Thanks!');
+    this.set('enter', false);
+    this.set('dropped', true);
+    setTimeout(function() {
+      $('.dropped').removeClass('dropped');
+      $('#drop').text('Drag image files here.');
+    }, 3500);
+    event.preventDefault();
+    event.stopPropagation();
   },
-  dragLeave: function(event) {
-    $("#drop").removeClass('enter');
-    $("#drop").removeClass('dropped');
-    $("#drop").addClass('leave');
-    $('#drop').text('Drag image files here.');
+  dragOver: function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   },
   dragEnter: function(event) {
-    $("#drop").removeClass('leave');
-    $("#drop").removeClass('dropped');
-    $("#drop").addClass('enter');
-    $('#drop').text('Drop it like it\'s hot.');
+    this.set('enter', true);
+    this.set('text', 'Drop it like it\'s hot.');
+  },
+  dragLeave: function(event) {
+    this.set('enter', false);
+    this.set('text', 'Drag image files here.');
   }
 });
 
